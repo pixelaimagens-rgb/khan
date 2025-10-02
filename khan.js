@@ -127,7 +127,7 @@ async function showSplashScreen() {
     `;
     splashScreen.innerHTML = `
         <img src="https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/ukh0rq22.png" alt="khanTrampos Logo">
-        <h1>KHANTRAMPOS</h1>
+        <h1>khanTrampos</h1>
         <p>Carregando...</p>
     `;
     document.body.appendChild(splashScreen);
@@ -225,4 +225,3 @@ loadScript('https://cdn.jsdelivr.net/npm/toastify-js')
     
     console.clear();
 });
-
