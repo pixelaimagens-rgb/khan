@@ -1,7 +1,7 @@
 const ver = "V3.1.2";
 let isDev = false;
 
-const repoPath = `https://raw.githubusercontent.com/Niximkk/Khanware/refs/heads/${isDev ? "dev/" : "main/"}`;
+const repoPath = `https://raw.githubusercontent.com/Niximkk/khanTrampos/refs/heads/${isDev ? "dev/" : "main/"}`;
 
 let device = {
     mobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone|Mobile|Tablet|Kindle|Silk|PlayBook|BB10/i.test(navigator.userAgent),
@@ -49,7 +49,48 @@ console.log(Object.defineProperties(new Error, { toString: {value() {(new Error)
 
 /* Misc Styles */
 document.head.appendChild(Object.assign(document.createElement("style"),{innerHTML:"@font-face{font-family:'MuseoSans';src:url('https://corsproxy.io/?url=https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/ynddewua.ttf')format('truetype')}" }));
-document.head.appendChild(Object.assign(document.createElement('style'),{innerHTML:"::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #f1f1f1; } ::-webkit-scrollbar-thumb { background: #888; border-radius: 10px; } ::-webkit-scrollbar-thumb:hover { background: #555; }"}));
+document.head.appendChild(Object.assign(document.createElement('style'),{innerHTML:`
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #888; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #555; }
+    body { font-family: MuseoSans, sans-serif; }
+    #splashScreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        user-select: none;
+        color: white;
+        flex-direction: column;
+    }
+    #splashScreen img {
+        width: 150px;
+        margin-bottom: 20px;
+        animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    #splashScreen h1 {
+        font-size: 36px;
+        margin: 0;
+    }
+    #splashScreen p {
+        font-size: 18px;
+        margin-top: 10px;
+        opacity: 0.8;
+    }
+`}));
 document.querySelector("link[rel~='icon']").href = 'https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/ukh0rq22.png';
 
 /* Emmiter */
@@ -73,7 +114,7 @@ async function showSplashScreen() {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #000;
+        background: linear-gradient(135deg, #ff7e5f, #feb47b);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -82,16 +123,12 @@ async function showSplashScreen() {
         transition: opacity 0.5s ease;
         user-select: none;
         color: white;
-        font-family: MuseoSans, sans-serif;
-        font-size: 30px;
-        text-align: center;
         flex-direction: column;
     `;
     splashScreen.innerHTML = `
-        <img src="https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/ukh0rq22.png" alt="khanTrampos Logo" style="width: 150px; margin-bottom: 20px;">
-        <span style="color: white;">KHANTRAMPOS</span>
-        <span style="color: #72ff72;">.SPACE</span>
-        <p style="font-size: 18px; margin-top: 20px;">Carregando...</p>
+        <img src="https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/ukh0rq22.png" alt="khanTrampos Logo">
+        <h1>KHANTRAMPOS</h1>
+        <p>Carregando...</p>
     `;
     document.body.appendChild(splashScreen);
     setTimeout(() => splashScreen.style.opacity = '1', 10);
