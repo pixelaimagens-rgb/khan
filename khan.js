@@ -36,9 +36,9 @@
         :root {
             --khz-bg: rgba(26, 27, 38, 0.85);
             --khz-surface: rgba(40, 42, 58, 0.9);
-            --khz-border: rgba(220, 20, 60, 0.2);
-            --khz-primary: #8b0000;
-            --khz-primary-hover: #ff2400;
+            --khz-border: rgba(73, 20, 220, 0.2);
+            --khz-primary: #45008bff;
+            --khz-primary-hover: #5500ffff;
             --khz-text: #e0e0e0;
             --khz-text-muted: #9e9e9e;
         }
@@ -182,11 +182,11 @@
                 let responseObj = await clonedResponse.json();
                 if (responseObj && responseObj.data && responseObj.data.assessmentItem && responseObj.data.assessmentItem.item && responseObj.data.assessmentItem.item.itemData) {
                     const phrases = [
-                        "Feito por [@trampos](https://github.com/dantaselo911) e [@hackermoon](https://github.com/hackermoon1)!",
-                        "Créditos para [hackermoon](https://github.com/hackermoon1) :)",
+                        "Feito por [@trampos](https://github.com/dantaselo911) e [bakai](https://github.com/)!",
+                        "Créditos para [trampos](https://github.com/dantaselo911) :)",
                         "Acesse o GitHub do [hackermoon](https://github.com/hackermoon1)!",
-                        "Entre no nosso Discord: [MoonScripts™](https://discord.gg/qtYnvFtnnm)!",
-                        "MoonScripts, espanca PD."
+                        "Entre no nosso Discord: [Eclipse](https://discord.gg/QAm62DDJ)!",
+                        "Eclipse sempre em frente"
                     ];
                     let itemData = JSON.parse(responseObj.data.assessmentItem.item.itemData);
                     itemData.question.content = phrases[Math.floor(Math.random() * phrases.length)] + `\n\n[[☃ radio 1]]`;
@@ -398,8 +398,7 @@
                 panel.className = "khz-panel";
                 panel.innerHTML = `
                     <div class="khz-header">
-                        <div class="khz-title">MoonScripts™</div>
-                        <div class="khz-version">DESCONTINUADA</div>
+                        <div class="khz-title">MoonScripts™</div
                     </div>
                     <div class="khz-tabs">
                         <div class="khz-tab active" data-tab="main">Principal</div>
@@ -424,7 +423,7 @@
                         <button id="khz-btn-oneko" class="khz-button"><svg class="khz-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6.13a15.42,15.42,0,0,1,2.91-9.5,1,1,0,0,1,1.82.94,13.49,13.49,0,00-1.6,9.41,1,1,0,0,1-.6,1,1,1,0,0,1-1.12-.39,12.54,12.54,0,0,1-1.41-5.55,1,1,0,0,1,1-1.11,1,1,0,0,1,1.12-.39,12.63,12.63,0,0,1,5.55,1.41,1,1,0,0,1,.39,1.12,1,1,0,0,1-1,.6,13.49,13.49,0,0,0-9.41,1.6,1,1,0,0,1-.94-1.82,15.42,15.42,0,0,1,9.5-2.91V15a1,1,0,0,1,2,0,13,13,0,0,0,0,2,1,1,0,0,1-2,0Z"/></svg><span>Oneko Gatinho</span></button>
                     </div>
                     <div class="khz-footer">
-                        <a href="https://discord.gg/NSKMumh4Yu" target="_blank">MoonScripts 🌙</a>
+                        <a href="https://discord.gg/QAm62DDJ" target="_blank">Eclipse 🌙</a>
                         <span id="khz-fps-counter">FPS: ...</span>
                     </div>
                 `;
@@ -524,3 +523,4 @@
         }, 2000);
     })();
 })();
+
